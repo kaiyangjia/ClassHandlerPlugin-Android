@@ -1,15 +1,33 @@
 apply plugin: 'groovy'
+apply plugin: "com.gradle.plugin-publish"
 
 dependencies {
     compile gradleApi()//gradle sdk
     compile localGroovy()//groovy sdk
     compile 'org.javassist:javassist:3.22.0-GA'
+    compile 'com.android.tools.build:gradle-api:2.3.3'
     compile 'com.android.tools.build:gradle:3.0.1'
 }
 
 group = 'com.jiakaiyang'
-version = '1.0'
+version = '1.1'
 
 repositories {
     jcenter()
+}
+
+// The configuration example below shows the minimum required properties
+// configured to publish your plugin to the plugin portal
+pluginBundle {
+    website = 'https://github.com/kaiyangjia/ClassHandlerPlugin-Android'
+    vcsUrl = 'https://github.com/kaiyangjia/ClassHandlerPlugin-Android'
+    description = 'This is a gradle plugin which can let you handle the classes file before the dex file created.'
+    tags = ['gradle', 'classfile', 'android']
+
+    plugins {
+        greetingsPlugin {
+            id = 'com.jiakaiyang.classhandler'
+            displayName = 'Class Handler plugin'
+        }
+    }
 }

@@ -1,14 +1,14 @@
 package com.jiakiayang.plugin.classhandler.timelog
 
-import android.content.Context
+import com.android.build.api.transform.Context
 import com.android.build.api.transform.DirectoryInput
 import com.android.build.api.transform.JarInput
 import com.android.build.api.transform.QualifiedContent
+import com.android.build.api.transform.Transform
 import com.android.build.api.transform.TransformException
 import com.android.build.api.transform.TransformInput
 import com.android.build.api.transform.TransformOutputProvider
 import com.jiakiayang.plugin.classhandler.utils.InjectUtils
-import org.gradle.internal.impldep.aQute.libg.xslt.Transform
 
 
 /**
