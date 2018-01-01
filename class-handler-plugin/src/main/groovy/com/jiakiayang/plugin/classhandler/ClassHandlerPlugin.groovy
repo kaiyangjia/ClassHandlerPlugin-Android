@@ -1,5 +1,6 @@
 package com.jiakiayang.plugin.classhandler
 
+import com.jiakiayang.plugin.classhandler.timelog.TimeLogTransform
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
@@ -16,6 +17,8 @@ class ClassHandlerPlugin implements Plugin<Project> {
             if (!timeLogEnable) {
                 return
             }
+
+            android.registerTransform(new TimeLogTransform(project))
         }
     }
 }

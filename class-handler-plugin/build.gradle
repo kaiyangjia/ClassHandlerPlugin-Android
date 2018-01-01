@@ -3,6 +3,8 @@ apply plugin: 'maven-publish'
 apply plugin: "com.gradle.plugin-publish"
 
 dependencies {
+    testImplementation 'junit:junit:4.12'
+
     compile gradleApi()//gradle sdk
     compile localGroovy()//groovy sdk
     compile 'org.javassist:javassist:3.22.0-GA'
