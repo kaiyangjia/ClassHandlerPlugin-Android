@@ -13,7 +13,7 @@ dependencies {
 }
 
 group = 'com.jiakaiyang'
-version = '1.2'
+version = '1.2.1'
 
 repositories {
     jcenter()
@@ -40,6 +40,12 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            url "../repo"
         }
     }
 }

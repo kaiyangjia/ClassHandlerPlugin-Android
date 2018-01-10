@@ -1,5 +1,6 @@
 package com.jiakiayang.plugin.classhandler
 
+import com.jiakiayang.plugin.classhandler.timelog.TimeLogTask
 import com.jiakiayang.plugin.classhandler.timelog.TimeLogTransform
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -10,7 +11,7 @@ class ClassHandlerPlugin implements Plugin<Project> {
     void apply(Project project) {
         project.extensions.create('classHandler', ClassHandlerPluginConfig)
 
-        project.task('timelog') << {
+        /*project.task('timelog') << {
             boolean timeLogEnable = project['classHandler'].enable
             println "Hello World, timelog: " + timeLogEnable
 
@@ -19,6 +20,9 @@ class ClassHandlerPlugin implements Plugin<Project> {
             }
 
             android.registerTransform(new TimeLogTransform(project))
-        }
+        }*/
+
+        project.getTasks().create("timeLog", TimeLogTask.class)
+        project.android.registerTransform(new TimeLogTransform(project))
     }
 }
